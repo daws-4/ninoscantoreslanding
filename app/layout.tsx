@@ -3,6 +3,11 @@ import { Metadata, Viewport } from "next";
 import { Nav } from "@/components/navbar";
 
 import { siteConfig } from "@/config/site";
+<<<<<<< HEAD
+=======
+import { fontSans, fontSerif } from "@/config/fonts";
+import { Navbar } from "@/components/navbar";
+>>>>>>> 439b134bfeb8981eef11d4b46eb06aba0e2b1601
 
 export const metadata: Metadata = {
   title: {
@@ -11,7 +16,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: "/ninoscantores_logo_redondo.png",
   },
 };
 
