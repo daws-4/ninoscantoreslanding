@@ -40,22 +40,22 @@ export const Navbar = () => {
             <PrincipalLogo className='bg-white-100' width={80} height={80} />
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+        <ul className="hidden lg:flex justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href} >
-              <div className=' hover:bg-customDarkBlue '>
+              <div className='transition-all duration-200 ease-in-out hover:bg-black/40 dark:hover:bg-customDarkBlue '>
 
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                    "data-[active=true]:text-primary data-[active=true]:font-medium  transition-all duration-100 ease-in-out transform text-xl px-5 py-8 cursor-pointer rounded hover:text-customBorder"
-                )}
-                color="foreground"
-                href={item.href}
+                <NextLink
+                  className={clsx(
+                    linkStyles({ color: "foreground" }),
+                    "data-[active=true]:text-primary data-[active=true]:font-medium transform text-xl px-5 py-8 cursor-pointer rounded transition-all duration-200 ease-in-out hover:text-customBorder"
+                  )}
+                  color="foreground"
+                  href={item.href}
                 >
-                {item.label}
-              </NextLink>
-                  </div>
+                  {item.label}
+                </NextLink>
+              </div>
             </NavbarItem>
           ))}
         </ul>
@@ -76,7 +76,7 @@ export const Navbar = () => {
             <SpotifyIcon className="text-default-500 bg-customSkyBlue dark:bg-blue-900 rounded-xl" />
           </Link>
           <Link isExternal aria-label="Apple Music" href={siteConfig.links.applemusic}>
-              <AppleMusicIcon className='text-default-500'/>
+            <AppleMusicIcon className='text-default-500' />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
