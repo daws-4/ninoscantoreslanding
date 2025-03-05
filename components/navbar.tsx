@@ -1,6 +1,5 @@
-import { siteConfig } from "@/config/site";
 import {
-  Navbar,
+  Navbar as HeroUINavbar,
   NavbarContent,
   NavbarMenu,
   NavbarMenuToggle,
@@ -8,9 +7,6 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@heroui/navbar";
-<<<<<<< HEAD
-import Link from "next/link";
-=======
 import { Button } from "@heroui/button";
 import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
@@ -35,35 +31,8 @@ import {
 } from "@/components/icons";
 
 export const Navbar = () => {
->>>>>>> 439b134bfeb8981eef11d4b46eb06aba0e2b1601
 
-export function Nav() {
   return (
-<<<<<<< HEAD
-    <Navbar shouldHideOnScroll>
-      <NavbarContent>
-        <NavbarBrand>
-          <NavbarItem>
-            <img src="/favicon.ico" alt="Logo" />
-          </NavbarItem>
-        </NavbarBrand>
-        <NavbarMenu>
-          {
-            siteConfig.navItems.map((item: { lable: string, href: string }) => (
-              <NavbarMenuItem key={crypto.randomUUID()}>
-                <Link href={item.href}>
-                  {item.lable}
-                </Link>
-              </NavbarMenuItem>
-            ))
-          }
-        </NavbarMenu>
-        <NavbarMenuToggle />
-      </NavbarContent>
-    </Navbar>
-  )
-}
-=======
     <HeroUINavbar maxWidth="xl" position="sticky" className='border-b-2 bg-gradient-to-tl from-amber-300 to-orange-400 dark:bg-gradient-to-br dark:from-blue-950 dark:to-blue-800 border-slate-800 pb-6'>
       <NavbarContent className="basis-1/5 sm:basis-full mt-5" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
@@ -154,4 +123,3 @@ export function Nav() {
     </HeroUINavbar>
   );
 };
->>>>>>> 439b134bfeb8981eef11d4b46eb06aba0e2b1601
