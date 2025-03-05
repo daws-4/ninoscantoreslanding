@@ -32,44 +32,37 @@ export const siteConfig = {
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Inicio",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Nosotros",
+      href: "/nosotros",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Material",
+      href: "/material",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "Blog",
+      href: "/blog",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "Aliados",
+      href: "/aliados",
     },
     {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Donaciones",
+      href: "/donaciones",
     },
   ],
   links: {
     github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
+    ig: "https://www.instagram.com/ncantorestachira/",
     docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
-    applemusic:"https://music.apple.com/ve/artist/niños-cantores-del-táchira/1691457673",
+    spotify: "https://open.spotify.com/intl-es/artist/1xSdp59aWJZD0xhGErT1KA",
+    tiktok: "https://www.tiktok.com/@ncantorestachira",
+    applemusic:
+      "https://music.apple.com/ve/artist/niños-cantores-del-táchira/1691457673",
   },
 };

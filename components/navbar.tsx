@@ -33,7 +33,7 @@ import {
 export const Navbar = () => {
 
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky" className='border-b-2 bg-gradient-to-tl from-amber-300 to-orange-400 dark:bg-gradient-to-br dark:from-blue-950 dark:to-blue-800 border-slate-800 pb-6'>
+    <HeroUINavbar maxWidth="xl" position="sticky" className=' bg-gradient-to-tl from-customSkyBlue to-customSkyCyan dark:bg-gradient-to-tl dark:from-blue-950 dark:to-blue-900 border-customBorder pb-6 border-b-2'>
       <NavbarContent className="basis-1/5 sm:basis-full mt-5" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center " href="/">
@@ -42,35 +42,38 @@ export const Navbar = () => {
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
+            <NavbarItem key={item.href} >
+              <div className=' hover:bg-customDarkBlue '>
+
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium ",
+                    "data-[active=true]:text-primary data-[active=true]:font-medium  transition-all duration-100 ease-in-out transform text-xl px-5 py-8 cursor-pointer rounded hover:text-customBorder"
                 )}
                 color="foreground"
                 href={item.href}
-              >
+                >
                 {item.label}
               </NextLink>
+                  </div>
             </NavbarItem>
           ))}
         </ul>
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full mt-5"
+        className="hidden lg:flex basis-1/5 lg:basis-full mt-5"
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <InstagramIcon className="text-default-500 bg-white dark:bg-blue-900 rounded-lg" />
+          <Link isExternal aria-label="Ig" href={siteConfig.links.ig}>
+            <InstagramIcon className="text-default-500 bg-customSkyBlue dark:bg-blue-900 rounded-lg" />
           </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
+          <Link isExternal aria-label="tiktok" href={siteConfig.links.tiktok}>
             <TiktokIcon className="text-default-500" />
           </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <SpotifyIcon className="text-default-500 bg-white dark:bg-blue-900 rounded-xl" />
+          <Link isExternal aria-label="Github" href={siteConfig.links.spotify}>
+            <SpotifyIcon className="text-default-500 bg-customSkyBlue dark:bg-blue-900 rounded-xl" />
           </Link>
           <Link isExternal aria-label="Apple Music" href={siteConfig.links.applemusic}>
               <AppleMusicIcon className='text-default-500'/>
@@ -82,7 +85,7 @@ export const Navbar = () => {
             isExternal
             as={Link}
             className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
+            // href={siteConfig.links.sponsor}
             startContent={<HeartFilledIcon className="text-danger" />}
             variant="flat"
           >
@@ -91,28 +94,28 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
+      <NavbarContent className="md:hidden basis-1 pl-4 mt-6" justify="end">
+        {/* <Link isExternal aria-label="Twitter" href={siteConfig.links.ig}>
+          <InstagramIcon className="text-default-500 bg-customSkyBlue dark:bg-blue-900 rounded-lg" width={34} height={34} />
+        </Link> */}
+        <Link isExternal aria-label="Tiktok" href={siteConfig.links.tiktok}>
+          <TiktokIcon className="text-default-500" width={34} height={34} />
+        </Link>
+        <Link isExternal aria-label="Spotify" href={siteConfig.links.spotify}>
+          <SpotifyIcon className="text-default-500 bg-customSkyBlue dark:bg-blue-900 rounded-xl" width={34} height={34} />
+        </Link>
+        <Link isExternal aria-label="Apple Music" href={siteConfig.links.applemusic}>
+          <AppleMusicIcon className='text-default-500' width={34} height={34} />
         </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarMenu>
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
+      <NavbarMenu className=' bg-gradient-to-bl from-customSkyBlue to-customSkyCyan dark:bg-gradient-to-bl dark:from-blue-950 dark:to-blue-900'>
+        <div className="mx-4 mt-10 flex flex-col gap-2 ">
+          {siteConfig.navItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
-                size="lg"
+              <Link className='text-customBorder bg-customDarkBlue p-4 px-10 rounded'
               >
                 {item.label}
               </Link>
