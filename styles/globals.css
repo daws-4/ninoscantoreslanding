@@ -5,3 +5,43 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* styles/globals.css */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInFromLeft {
+  animation: slideInFromLeft 1s forwards;
+}
+
+.animate-slideInFromRight {
+  animation: slideInFromRight 1s forwards;
+}
+
+.fixed-size {
+  width: 100%;
+  max-width: 900px;
+  /* Ajusta según el tamaño de tu contenido */
+  height: auto;
+}
