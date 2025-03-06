@@ -43,7 +43,7 @@ export const Navbar = () => {
         <ul className="hidden lg:flex justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href} >
-              <div className='transition-all duration-200 ease-in-out hover:bg-black/40 dark:hover:bg-customDarkBlue '>
+              <div className='transition-all duration-200 ease-in-out hover:bg-customDarkBlue dark:hover:bg-customDarkBlue '>
 
                 <NextLink
                   className={clsx(
