@@ -1,7 +1,6 @@
 import {
   Fira_Code as FontMono,
-  Inter as FontSans,
-  Instrument_Serif,} from "next/font/google";
+  Inter as FontSans,} from "next/font/google";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -11,9 +10,4 @@ export const fontSans = FontSans({
 export const fontMono = FontMono({
   subsets: ["latin"],
   variable: "--font-mono",
-});
-export const fontSerif = Instrument_Serif({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  weight: "400"
 });

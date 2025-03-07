@@ -26,6 +26,7 @@ module.exports = {
         customGold3: "#D7AE00",
         customGold4: "#FABD00",
         customDarkBlue: "#172b45",
+        customCream: "#fdf2dd",
       },
     },
   },

@@ -45,3 +45,6 @@ body {
   /* Ajusta según el tamaño de tu contenido */
   height: auto;
 }
+.no-overflow {
+  overflow: hidden;
+}

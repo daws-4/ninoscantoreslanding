@@ -62,7 +62,6 @@ export const siteConfig = {
     docs: "https://heroui.com",
     spotify: "https://open.spotify.com/intl-es/artist/1xSdp59aWJZD0xhGErT1KA",
     tiktok: "https://www.tiktok.com/@ncantorestachira",
-    applemusic:
-      "https://music.apple.com/ve/artist/niños-cantores-del-táchira/1691457673",
+    applemusic:"https://music.apple.com/ve/artist/niños-cantores-del-táchira/1691457673",
   },
 };
