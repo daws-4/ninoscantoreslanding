@@ -8,4 +8,5 @@ export interface Aliado {
   name: string;
   descripcion: string;
   img?: string;
+  link?: string;
 }

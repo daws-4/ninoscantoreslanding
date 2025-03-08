@@ -80,7 +80,7 @@ export const Navbar = () => {
           </Link>
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden md:flex">
+        {/* <NavbarItem className="hidden md:flex">
           <Button
             isExternal
             as={Link}
@@ -91,10 +91,10 @@ export const Navbar = () => {
           >
             Sponsor
           </Button>
-        </NavbarItem>
+        </NavbarItem> */}
       </NavbarContent>
 
-      <NavbarContent className="md:hidden basis-1 pl-4 mt-6" justify="end">
+      <NavbarContent className="lg:hidden basis-1 pl-4 mt-6" justify="end">
         {/* <Link isExternal aria-label="Twitter" href={siteConfig.links.ig}>
           <InstagramIcon className="text-default-500 bg-customSkyBlue dark:bg-blue-900 rounded-lg" width={34} height={34} />
         </Link> */}

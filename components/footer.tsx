@@ -1,7 +1,7 @@
 export default function Footer () {
 
     return(
-        <section className=' flex bg-customCream w-full'>
+        <section className=' flex bg-customCream dark:bg-black w-full'>
             <div className=''> {/* Links*/}
                 <ul>
 
