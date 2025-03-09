@@ -48,7 +48,6 @@ export default function Home() {
     };
   }, []);
 
-  //arreglar el crecimiento inesperado de la pantalla
   return (
     <>
       <section className=' flex bg-gradient-to-tr from-slate-950 to-customDarkBlue '>
