@@ -5,8 +5,30 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
 };
 
 export interface Aliado {
+  id: string;
   name: string;
   descripcion: string;
   img?: string;
   link?: string;
+  material?: Material;
+}
+
+export interface Material {
+  imgs?: {
+    img: string;
+    alt: string;
+  }[];
+  pdfs?: {
+    pdf: string;
+    title: string;
+  }[];
+  videos?: {
+    video: string;
+    title: string;
+  }[];
+  songs?: {
+    song: string;
+    title: string;
+    artists?: string[];
+  }[];
 }
