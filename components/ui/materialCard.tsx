@@ -35,7 +35,7 @@ export function MaterialCard({ aliados }: { aliados: Aliado[] }): JSX.Element {
             router.push(ruta);
 
         } catch (e) {
-            setErrors({ password: e.message });
+            setErrors({ password: (e as Error).message });
         } finally {
             setVerificando(false);
         }
@@ -45,7 +45,7 @@ export function MaterialCard({ aliados }: { aliados: Aliado[] }): JSX.Element {
 
     return (
         <>
-            <Alert color="danger" title="Nota importante" description="El material de este sitio está protegido con una contraseña para evitar el robo de propiedad intelectual :3" />
+            <Alert color="danger" title="Nota importante" description="El material de este sitio está protegido con una contraseña para evitar el robo de propiedad intelectual" />
 
             <Accordion variant="splitted">
                 {
