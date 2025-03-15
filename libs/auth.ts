@@ -3,15 +3,15 @@
 import { cookies } from "next/headers";
 
 export async function Verificacion(password: number) {
+  const algo = Number(process.env.CLAVE_SECRETA);
 
-    const algo = Number(process.env.CLAVE_SECRETA);
+  if (password !== algo) {
+    throw new Error("La contraseña es incorrecta");
+  }
 
-    if (password !== algo) {
-        throw new Error("La contraseña es incorrecta");
-    }
+  const coocqui = await cookies();
 
-    const coocqui = await cookies()
-    coocqui.set("Autorizado", password.toString(), {
-        maxAge: 60 * 60 * 24 * 15
-    });
+  coocqui.set("Autorizado", password.toString(), {
+    maxAge: 60 * 60 * 24 * 15,
+  });
 }

@@ -32,3 +32,9 @@ export interface Material {
     artists?: string[];
   }[];
 }
+
+export interface Integrante{
+  nombre: string;
+  apellido: string;
+  cargo: string;
+}

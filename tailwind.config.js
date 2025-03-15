@@ -1,4 +1,5 @@
-import {heroui} from "@heroui/theme"
+import { heroui } from "@heroui/theme"
+// import { keyframes } from "framer-motion";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -28,6 +29,21 @@ module.exports = {
         customDarkBlue: "#172b45",
         customCream: "#fdf2dd",
       },
+      animation: {
+        'fade-in': 'fade-in 375ms ease-in-out'
+      },
+      keyframes: {
+        'fade-in': {
+          from: {
+            opacity: 0,
+            visibility: 'hidden'
+          },
+          to: {
+            opacity: 1,
+            visibility: 'visible'
+          },
+        }
+      }
     },
   },
   darkMode: "class",
