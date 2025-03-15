@@ -1,6 +1,7 @@
 "use client"
 
 import { Image } from "@heroui/react"
+import { EquipoBagde } from "./ui/equipoBagde"
 
 export function NosotrosInfo() {
     return (
@@ -35,6 +36,8 @@ export function NosotrosInfo() {
                 </p>
                 <Image src={"https://random-image-pepebigotes.vercel.app/api/random-image"} alt="Sobre nosotros" className="xl:rounded-lg h-30 aspect-square rounded-full md:h-full xl:aspect-video w-auto transition-height ease-in-out" />
             </section>
+
+            <EquipoBagde />
         </section>
     )
 }

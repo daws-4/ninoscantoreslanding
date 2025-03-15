@@ -34,7 +34,9 @@ export interface Material {
 }
 
 export interface Integrante{
+  id: string;
   nombre: string;
   apellido: string;
   cargo: string;
+  img?: string;
 }
