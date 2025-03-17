@@ -98,7 +98,7 @@ export function EquipoBagde() {
                                                     className="w-auto h-auto data-[hover]:bg-foreground/10"
                                                     radius="full"
                                                     variant="light"
-                                                >
+                                                > 
                                                     <PauseCircleIcon size={54} />
                                                 </Button>
                                                 <Button
