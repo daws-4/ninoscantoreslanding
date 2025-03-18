@@ -81,7 +81,7 @@ export default function Home() {
       </section>
       <section>
         <div className='flex justify-center items-center'>
-          <h2 className={clsx("text-center text-4xl text-customBorder", "justify-start items-center pl-12 font-serif")}>Historia</h2>
+          <h2 className={clsx("text-center text-4xl text-customBorder", "justify-start items-center pl-12 font-serif")}>NUESTROS PATROCINANTES</h2>
         </div>
         <div className='flex justify-center items-center'>
           <p className={clsx("text-center text-2xl text-customBorder", "justify-start items-center pl-12 font-serif")}> </p>
