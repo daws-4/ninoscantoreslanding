@@ -16,7 +16,7 @@ import { useCallback, useState } from "react";
 
 export default function Footer() {
     const [markerRef, marker] = useAdvancedMarkerRef();
-    const [infoWindowShown, setInfoWindowShown] = useState(false);
+    const [infoWindowShown, setInfoWindowShown] = useState(true);
 
 
     // clicking the marker will toggle the infowindow
@@ -26,7 +26,7 @@ export default function Footer() {
     );
 
     // if the maps api closes the infowindow, we have to synchronize our state
-    const handleClose = useCallback(() => setInfoWindowShown(true), []);
+    const handleClose = useCallback(() => setInfoWindowShown(false), []);
 
     const apikey = process.env.GOOGLE_MAPS_API_KEY
     const mapid = process.env.GOOGLE_MAPS_API_MAP
