@@ -1,3 +1,4 @@
+'use client'
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -7,14 +8,14 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import { Button } from "@heroui/button";
+import { Button, PressEvent } from "@heroui/button";
 import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
-
+import {useEffect, useState} from 'react'
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
@@ -29,11 +30,22 @@ import {
   SpotifyIcon,
   AppleMusicIcon
 } from "@/components/icons";
+import React from "react";
 
 export const Navbar = () => {
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleMenuState=()=>{
+    if (!isMenuOpen){
+      return
+    }else{
+      setIsMenuOpen(false)
+    }
+  }
+  useEffect(() => {
+    console.log(isMenuOpen, 'estado del menú')
+  }, [isMenuOpen]);
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky" className=' bg-gradient-to-tl from-customSkyBlue to-customSkyCyan dark:bg-gradient-to-tl dark:from-blue-950 dark:to-blue-900 border-customBorder pb-6 border-b-2'>
+    <HeroUINavbar maxWidth="xl" position="sticky" className=' bg-gradient-to-tl from-customSkyBlue to-customSkyCyan dark:bg-gradient-to-tl dark:from-blue-950 dark:to-blue-900 border-customBorder pb-6 border-b-2' onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent className="basis-1/5 sm:basis-full mt-5" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center " href="/">
@@ -108,14 +120,14 @@ export const Navbar = () => {
           <AppleMusicIcon className='text-default-500' width={34} height={34} />
         </Link>
         <ThemeSwitch />
-        <NavbarMenuToggle />
+        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
       </NavbarContent>
 
       <NavbarMenu className=' bg-gradient-to-bl from-customSkyBlue to-customSkyCyan dark:bg-gradient-to-bl dark:from-blue-950 dark:to-blue-900'>
         <div className="mx-4 mt-10 flex flex-col gap-2 ">
           {siteConfig.navItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link className='text-customBorder bg-customDarkBlue p-4 px-10 rounded'
+              <Link onPress={handleMenuState} href={item.href} className='text-customBorder bg-customDarkBlue p-4 px-10 rounded'
               >
                 {item.label}
               </Link>
