@@ -1,3 +1,4 @@
+'use client'
 import { siteConfig } from "@/config/site";
 import { NavbarItem } from "@heroui/navbar";
 import { Link } from "@heroui/link";
@@ -8,8 +9,10 @@ import {
     AppleMusicIcon
 } from "@/components/icons";
 import { ThemeSwitch } from "./theme-switch";
+import { APIProvider, Map } from '@vis.gl/react-google-maps';
 
 export default function Footer() {
+    console.log(process.env.GOOGLE_MAPS_API_KEY);
     return (
         <section className="flex flex-col sm:flex-row justify-between bg-customCream dark:bg-gradient-to-tl dark:from-blue-950 dark:to-blue-900 w-full mt-10">
 
@@ -33,7 +36,17 @@ export default function Footer() {
                 </Link>
             </div>
             <div className="flex items-center justify-center sm:justify-end mt-10 sm:mt-0">
-                <ThemeSwitch />
+                {process.env.GOOGLE_MAPS_API_KEY ? (
+                    <APIProvider apiKey={process.env.GOOGLE_MAPS_API_KEY}>
+                        <Map style={{ width: '100vw', height: '100vh' }}
+                            defaultCenter={{ lat: 22.54992, lng: 0 }}
+                            defaultZoom={3}
+                            gestureHandling={'greedy'}
+                            disableDefaultUI={true} />
+                    </APIProvider>
+                ) : (
+                    <div>Map API Key Missing</div> // Or some other fallback
+                )}
             </div>
         </section>
     );
