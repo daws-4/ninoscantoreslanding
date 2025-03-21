@@ -44,7 +44,7 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
             <Navbar />
-            <main className=" w-full flex flex-col bottom-0">
+            <main className=" w-full flex flex-col bottom-0 animate-fade-in">
               {children}
             </main>
             <footer className="w-full flex items-center justify-center bottom-0">

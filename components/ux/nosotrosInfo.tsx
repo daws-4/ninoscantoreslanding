@@ -1,7 +1,7 @@
 "use client"
 
 import { Image } from "@heroui/react"
-import { EquipoBagde } from "./ui/equipoBagde"
+import { EquipoBagde } from "@/components/ux/equipoBagde"
 
 export function NosotrosInfo() {
     return (
@@ -23,7 +23,6 @@ export function NosotrosInfo() {
                     <br /><br />
                     El concepto “Niños Cantores” proviene de la tradición histórica europea, aproximadamente desde el Siglo XVI, cuando las voces infantiles hacen parte de la escena tradicional de Austria con los actuales Niños Cantores de Viena, donde se produce una escuela tradicional para la formación de cantores, con un sello sonoro estético y artístico acorde a sus edades, posibilidades vocales, repertorio de alta dificultad con mayor atención a la música académica, sacra y nacionalista.
                     <br /><br />
-
                     Esta visión, perfeccionada con el paso del tiempo, fue multiplicándose como modelo de desarrollo para las agrupaciones vocales infantiles en el mundo occidental contemporáneo, desde la propuesta pedagógica en la sala de ensayo, hasta la razón y puesta en escena en conciertos, recitales y participaciones en grandes obras sinfónico corales.
                 </p>
             </section>

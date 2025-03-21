@@ -54,7 +54,7 @@ export const HeartIcon: React.FC<IconSvgProps> = ({
   );
 };
 
-export const PauseCircleIcon: React.FC<IconSvgProps> = ({size = 24, width, height, ...props}) => {
+export const PauseCircleIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, ...props }) => {
   return (
     <svg
       aria-hidden="true"
@@ -62,19 +62,33 @@ export const PauseCircleIcon: React.FC<IconSvgProps> = ({size = 24, width, heigh
       focusable="false"
       height={size || height}
       role="presentation"
-      viewBox="0 0 24 24"
+      viewBox="0 0 60 60"
       width={size || width}
       {...props}
     >
-      <path
-        d="M11.9688 2C6.44875 2 1.96875 6.48 1.96875 12C1.96875 17.52 6.44875 22 11.9688 22C17.4888 22 21.9688 17.52 21.9688 12C21.9688 6.48 17.4988 2 11.9688 2ZM10.7188 15.03C10.7188 15.51 10.5188 15.7 10.0087 15.7H8.70875C8.19875 15.7 7.99875 15.51 7.99875 15.03V8.97C7.99875 8.49 8.19875 8.3 8.70875 8.3H9.99875C10.5087 8.3 10.7087 8.49 10.7087 8.97V15.03H10.7188ZM15.9987 15.03C15.9987 15.51 15.7987 15.7 15.2887 15.7H13.9987C13.4887 15.7 13.2887 15.51 13.2887 15.03V8.97C13.2887 8.49 13.4887 8.3 13.9987 8.3H15.2887C15.7987 8.3 15.9987 8.49 15.9987 8.97V15.03Z"
-        fill="currentColor"
-      />
+      <path fill="currentColor" fillRule="evenodd" d="M40 30c0 .3-.2.7-.5.8l-10 6.5a1 1 0 0 1-1-1.7l8.7-5.6L26 22.8V39a1 1 0 1 1-2 0V21a1 1 0 0 1 1.5-.8l14 9c.3.1.5.5.5.8M30 58a28 28 0 1 1 0-56 28 28 0 0 1 0 56m0-58a30 30 0 1 0 0 60 30 30 0 0 0 0-60" />
     </svg>
   );
 };
 
-export const NextIcon: React.FC<IconSvgProps> = ({size = 24, width, height, ...props}) => {
+export const PlayCircleIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, ...props }) => {
+  return (
+    <svg
+      aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height={size || height}
+      role="presentation"
+      viewBox="0 0 60 60"
+      width={width || size}
+      {...props}
+    >
+      <path fill="currentColor" fillRule="evenodd" d="M28 21v18a1 1 0 1 1-2 0V22h-4v16h1a1 1 0 1 1 0 2h-2a1 1 0 0 1-1-1V21c0-.6.4-1 1-1h6c.6 0 1 .4 1 1m12 0v18a1 1 0 1 1-2 0V22h-4v16h1a1 1 0 1 1 0 2h-2a1 1 0 0 1-1-1V21c0-.6.4-1 1-1h6c.6 0 1 .4 1 1M30 58a28 28 0 1 1 0-56 28 28 0 0 1 0 56m0-58a30 30 0 1 0 0 60 30 30 0 0 0 0-60" />
+    </svg>
+  )
+}
+
+export const NextIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, ...props }) => {
   return (
     <svg
       aria-hidden="true"
@@ -98,7 +112,7 @@ export const NextIcon: React.FC<IconSvgProps> = ({size = 24, width, height, ...p
   );
 };
 
-export const PreviousIcon: React.FC<IconSvgProps> = ({size = 24, width, height, ...props}) => {
+export const PreviousIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, ...props }) => {
   return (
     <svg
       aria-hidden="true"
@@ -122,7 +136,7 @@ export const PreviousIcon: React.FC<IconSvgProps> = ({size = 24, width, height, 
   );
 };
 
-export const RepeatOneIcon: React.FC<IconSvgProps> = ({size = 24, width, height, ...props}) => {
+export const RepeatOneIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, ...props }) => {
   return (
     <svg
       aria-hidden="true"
@@ -150,7 +164,7 @@ export const RepeatOneIcon: React.FC<IconSvgProps> = ({size = 24, width, height,
   );
 };
 
-export const ShuffleIcon: React.FC<IconSvgProps> = ({size = 24, width, height, ...props}) => {
+export const ShuffleIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, ...props }) => {
   return (
     <svg
       aria-hidden="true"

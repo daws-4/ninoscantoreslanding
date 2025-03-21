@@ -1,4 +1,4 @@
-import { AliadosCard } from "@/components/ui/aliadosCard"
+import { AliadosCard } from "@/components/ux/aliadosCard"
 import { aliados } from "@/config/aliados"
 import { Aliado } from "@/types"
 import { Titulo } from "@/components/ui/Titulo"

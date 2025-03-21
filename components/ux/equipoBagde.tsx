@@ -2,9 +2,9 @@
 
 import { Equipo } from "@/config/equipo"
 import { Integrante } from "@/types"
-import { Card, CardBody, Image, Button, Slider } from "@heroui/react"
+import { Card, CardBody, Image, Button, Slider, SliderValue } from "@heroui/react"
 import { useState } from "react"
-import { HeartIcon, RepeatOneIcon, PreviousIcon, PauseCircleIcon, ShuffleIcon, NextIcon } from "@/components/icons"
+import { HeartIcon, RepeatOneIcon, PreviousIcon, PauseCircleIcon, ShuffleIcon, NextIcon, PlayCircleIcon } from "@/components/icons"
 
 export function EquipoBagde() {
 
@@ -15,6 +15,30 @@ export function EquipoBagde() {
                 {
                     Equipo.map((integrante: Integrante) => {
                         const [liked, setLiked] = useState(false);
+                        const [isPlaying, setIsPlaying] = useState(false);
+                        const [value, setValue] = useState<number>(0)
+
+                        const duracion = (segundos: number) => {
+                            const mins = Math.floor(segundos / 60)
+                            const secs = segundos % 60
+                            const songDuration = `${mins}:${(secs).toString().padStart(2, "0")}`
+                            return songDuration
+                        }
+
+                        // Este trozo de código es para hacer que las duraciones de las canciones sean aleatorias
+                        const maxValue = 240 // duración de la canción
+
+                        // Handles para hacerlo interactivo
+                        const playHandle = () => {
+                            setIsPlaying((prev_play) => !prev_play)
+                            setTimeout(() => { setValue((prev_vaule) => prev_vaule + 1) }, 1000)
+                        }
+                        const slideHandle = (value: SliderValue) => {
+                            if (isNaN(Number(value))) return;
+
+                            setValue(Math.floor(maxValue / 100 * Number(value)))
+                        }
+                        const likeHandle = () => { setLiked((prev_linked) => !prev_linked) }
 
                         return (
                             <Card
@@ -50,7 +74,7 @@ export function EquipoBagde() {
                                                     className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2"
                                                     radius="full"
                                                     variant="light"
-                                                    onPress={() => setLiked((v) => !v)}
+                                                    onPress={likeHandle}
                                                 >
                                                     <HeartIcon
                                                         className={liked ? "[&>path]:stroke-transparent" : ""}
@@ -67,12 +91,14 @@ export function EquipoBagde() {
                                                         thumb: "w-2 h-2 after:w-2 after:h-2 after:bg-foreground",
                                                     }}
                                                     color="foreground"
-                                                    defaultValue={33}
+                                                    defaultValue={value}
+                                                    value={value}
+                                                    // onChange={slideHandle(value: number)}
                                                     size="sm"
                                                 />
                                                 <div className="flex justify-between">
-                                                    <p className="text-small">1:23</p>
-                                                    <p className="text-small text-foreground/50">4:32</p>
+                                                    <p className="text-small">{duracion(value)}</p>
+                                                    <p className="text-small text-foreground/50">{duracion(maxValue)}</p>
                                                 </div>
                                             </div>
 
@@ -98,8 +124,9 @@ export function EquipoBagde() {
                                                     className="w-auto h-auto data-[hover]:bg-foreground/10"
                                                     radius="full"
                                                     variant="light"
+                                                    onPress={playHandle}
                                                 >
-                                                    <PauseCircleIcon size={54} />
+                                                    {isPlaying ? <PlayCircleIcon size={54} /> : <PauseCircleIcon size={54} />}
                                                 </Button>
                                                 <Button
                                                     isIconOnly

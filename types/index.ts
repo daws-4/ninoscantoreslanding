@@ -4,6 +4,8 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number;
 };
 
+export type Currency = "USD" | "EUR" | "COP" | "BS";
+
 export interface Aliado {
   id: string;
   name: string;
@@ -33,10 +35,20 @@ export interface Material {
   }[];
 }
 
-export interface Integrante{
+export interface Integrante {
   id: string;
   nombre: string;
   apellido: string;
   cargo: string;
   img?: string;
+}
+
+export interface ApoyoPrice {
+  id: string;
+  label: string;
+  precios: number[];
+  currency: Currency;
+  tipo: string[];
+  descripcion: string;
+  beneficios: string[];
 }

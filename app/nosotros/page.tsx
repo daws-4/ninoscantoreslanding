@@ -1,5 +1,5 @@
 import { Titulo } from "@/components/ui/Titulo";
-import { NosotrosInfo } from "@/components/nosotrosInfo";
+import { NosotrosInfo } from "@/components/ux/nosotrosInfo";
 
 export default function Nosotros() {
   return (

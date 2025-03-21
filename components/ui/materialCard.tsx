@@ -17,7 +17,7 @@ import {
 import { useState } from "react";
 import { ValidationErrors } from "@react-types/shared";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import { Image } from "@heroui/react";
 
 import { Verificacion } from "@/libs/auth";
 import { ShieldSecurityIcon } from "@/components/icons";
