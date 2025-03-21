@@ -48,3 +48,6 @@ body {
 .no-overflow {
   overflow: hidden;
 }
+.hide {
+  opacity: 0;
+}
