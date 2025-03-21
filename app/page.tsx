@@ -84,8 +84,8 @@ export default function Home() {
       <section className='flex flex-col sm:flex-row bg-customCream dark:bg-gradient-to-tl dark:from-blue-950 dark:to-blue-900 w-full py-10'>
         
           <ImageComponent
-          className=" ml-6"
-          src='/imagenes/imagen1.jpg'
+          className=" ml-6 rounded-lg shadow-lg fixed block"
+          src='/imagenes/Imagen1.jpg'
           alt='imagen1'
           height={200}
           width={400} />
