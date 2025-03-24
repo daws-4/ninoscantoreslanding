@@ -1,14 +1,14 @@
 "use client"
 
 import { Image } from "@heroui/react"
-import { EquipoBagde } from "@/components/ux/equipoBagde"
+import { EquipoPlayList } from "@/components/ux/equipoPlayList"
 
 export function NosotrosInfo() {
     return (
         <section className="animate-fade-in grid gap-8">
             <section className="flex flex-col-reverse md:flex-row items-center justify-around gap-4">
-                <Image src={"https://random-image-pepebigotes.vercel.app/api/random-image"} alt="Sobre nosotros" className="xl:rounded-lg h-30 aspect-square rounded-full md:h-full xl:aspect-video w-auto transition-height ease-in-out" />
-                <p className="xl:text-balance xl:text-center transition-all duration-250 ease-in-out max-w-[70ch] xl:max-w-[55ch] text-xl text-slate-700 dark:text-slate-300">
+                <Image src={"/nosotros/about1.webp"} alt="Sobre nosotros" className="xl:rounded-lg h-30 aspect-square rounded-full md:h-full xl:aspect-video w-auto transition-height ease-in-out object-cover" />
+                <p className="xl:text-balance text-center transition-all duration-250 ease-in-out max-w-[70ch] xl:max-w-[55ch] text-xl text-slate-700 dark:text-slate-300">
                     El 24 de julio de 1983, nace los Niños Cantores del Táchira, agrupación que por cuatro décadas ha significado cuna de valores culturales para un sinfín de generaciones de cantores en la región.
                     <br /><br />
                     Cuenta con más de 900 egresados de sus filas, 9 producciones musicales, dos presentaciones en el Festival Mundial de Coros Infantiles “Worldsong” en Estados Unidos, Premio a Mejor Coro Infantil en Competencia Coral otorgado por el Festival Internacional “Gustavo Gómez Ardila” y el título de “Embajadores del Buen Canto Coral” otorgado por concurso de oposición en la Federación Internacional para la Música Coral en Lituania.
@@ -28,15 +28,15 @@ export function NosotrosInfo() {
             </section>
 
             <section className="flex flex-col-reverse md:flex-row items-center justify-around gap-4">
-                <p className="xl:text-balance xl:text-center transition-all duration-250 ease-in-out max-w-[70ch] xl:max-w-[55ch] text-xl text-slate-700 dark:text-slate-300">
+                <p className="xl:text-balance text-center transition-all duration-250 ease-in-out max-w-[70ch] xl:max-w-[55ch] text-xl text-slate-700 dark:text-slate-300">
                     Bajo esta perspectiva, los Niños Cantores del Táchira han desarrollado sus elementos de acción; técnica vocal muy cuidada donde los sonidos redondos y velados se transforman en la base del trabajo sonoro; sin vibrato y alejado de poseer voces estridentes, cuidado y uso controlado del aparato vocal.
                     <br /><br />
                     Intenciones fraseológicas marcadas según el compositor y la obra, atención a la intención interpretativa de carácter estilístico de manera consciente para asegurar la versatilidad de la agrupación, rescate y difusión de música nacional y regional; exploración en audioperceptiva y dominio de formas musicales corales definen la tesonera labor de todos sus integrantes por más de cuatro décadas, convirtiéndose en una de las principales agrupaciones infantiles del país.
                 </p>
-                <Image src={"https://random-image-pepebigotes.vercel.app/api/random-image"} alt="Sobre nosotros" className="xl:rounded-lg h-30 aspect-square rounded-full md:h-full xl:aspect-video w-auto transition-height ease-in-out" />
+                <Image src={"/nosotros/about2.webp"} alt="Sobre nosotros" className="xl:rounded-lg h-30 aspect-square rounded-full md:h-full xl:aspect-video w-auto transition-height ease-in-out object-cover" />
             </section>
 
-            <EquipoBagde />
+            <EquipoPlayList />
         </section>
     )
 }

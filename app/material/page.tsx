@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Material() {
     return (
-        <article className="container mx-auto">
+        <article className="container mx-auto px-4 lg:px-0">
             <Titulo>Material</Titulo>
             <section className="grid place-items-center gap-4 animate-fade-in">
 

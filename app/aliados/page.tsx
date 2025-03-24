@@ -5,7 +5,7 @@ import { Titulo } from "@/components/ui/Titulo"
 
 export default function Aliados(){
     return(
-        <article className="container mx-auto">
+        <article className="container mx-auto px-4 lg:px-0">
             <Titulo>
                 Nuestros aliados
             </Titulo>

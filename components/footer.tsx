@@ -18,7 +18,6 @@ export default function Footer() {
     const [markerRef, marker] = useAdvancedMarkerRef();
     const [infoWindowShown, setInfoWindowShown] = useState(true);
 
-
     // clicking the marker will toggle the infowindow
     const handleMarkerClick = useCallback(
         () => setInfoWindowShown(isShown => !isShown),

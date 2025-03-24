@@ -3,10 +3,10 @@
 import { Equipo } from "@/config/equipo"
 import { Integrante } from "@/types"
 import { Card, CardBody, Image, Button, Slider, SliderValue } from "@heroui/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { HeartIcon, RepeatOneIcon, PreviousIcon, PauseCircleIcon, ShuffleIcon, NextIcon, PlayCircleIcon } from "@/components/icons"
 
-export function EquipoBagde() {
+export function EquipoPlayList() {
 
     return (
         <article>
@@ -16,7 +16,8 @@ export function EquipoBagde() {
                     Equipo.map((integrante: Integrante) => {
                         const [liked, setLiked] = useState(false);
                         const [isPlaying, setIsPlaying] = useState(false);
-                        const [value, setValue] = useState<number>(0)
+                        const [ended, setEnded] = useState(false);
+                        const [value, setValue] = useState<SliderValue>(0)
 
                         const duracion = (segundos: number) => {
                             const mins = Math.floor(segundos / 60)
@@ -30,14 +31,22 @@ export function EquipoBagde() {
 
                         // Handles para hacerlo interactivo
                         const playHandle = () => {
-                            setIsPlaying((prev_play) => !prev_play)
-                            setTimeout(() => { setValue((prev_vaule) => prev_vaule + 1) }, 1000)
-                        }
-                        const slideHandle = (value: SliderValue) => {
-                            if (isNaN(Number(value))) return;
+                            if (isNaN(Number(value))) return
 
-                            setValue(Math.floor(maxValue / 100 * Number(value)))
+                            setIsPlaying((prev_play) => !prev_play)
+
+                            if (value as number >= maxValue) {
+                                setEnded(true)
+                                setIsPlaying(false)
+                            }
+
+                            setTimeout(() => {
+                                setValue((prev_value) => prev_value as number + 1) 
+                            }, 1000)
+
+                            console.log({ value })
                         }
+
                         const likeHandle = () => { setLiked((prev_linked) => !prev_linked) }
 
                         return (
@@ -63,7 +72,7 @@ export function EquipoBagde() {
                                         <div className="flex flex-col col-span-6 md:col-span-8">
                                             <div className="flex justify-between items-start">
                                                 <div className="flex flex-col gap-0">
-                                                    <h3 className="text-xl font-semibold text-foreground/90">{`${integrante.apellido}, ${integrante.nombre}`}</h3>
+                                                    <h3 className="text-xl font-semibold text-foreground/90 ">{`${integrante.apellido}, ${integrante.nombre}`}</h3>
                                                     <p className="text-small text-foreground/80">{integrante.cargo}</p>
                                                     <h1 className="text-large font-medium mt-2">
                                                         Miembro del equipo
@@ -78,7 +87,7 @@ export function EquipoBagde() {
                                                 >
                                                     <HeartIcon
                                                         className={liked ? "[&>path]:stroke-transparent" : ""}
-                                                        fill={liked ? "currentColor" : "none"}
+                                                        fill={liked ? "#ff4060" : "none"}
                                                     />
                                                 </Button>
                                             </div>
@@ -88,16 +97,17 @@ export function EquipoBagde() {
                                                     aria-label="Music progress"
                                                     classNames={{
                                                         track: "bg-default-500/30",
-                                                        thumb: "w-2 h-2 after:w-2 after:h-2 after:bg-foreground",
+                                                        thumb: "bg-foreground",
                                                     }}
                                                     color="foreground"
+                                                    maxValue={maxValue}
                                                     defaultValue={value}
                                                     value={value}
-                                                    // onChange={slideHandle(value: number)}
+                                                    onChange={setValue}
                                                     size="sm"
                                                 />
                                                 <div className="flex justify-between">
-                                                    <p className="text-small">{duracion(value)}</p>
+                                                    <p className="text-small">{duracion(value as number)}</p>
                                                     <p className="text-small text-foreground/50">{duracion(maxValue)}</p>
                                                 </div>
                                             </div>

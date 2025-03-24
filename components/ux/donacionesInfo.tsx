@@ -3,7 +3,7 @@
 import { apoyoPrice } from "@/config/apoyo"
 import { ApoyoPrice } from "@/types"
 import { Image } from "@heroui/react"
-import { PrincingCard } from "../ui/pricingsCard"
+import { PrincingCard } from "@/components/ui/pricingsCard"
 
 export function DonacionesInfo() {
     return (
@@ -21,7 +21,7 @@ export function DonacionesInfo() {
 
             </section>
             <h3 className="text-customGold3 my-3 text-2xl dark:text-customGold1">Te ofrecemos los siguientes planes de apoyo</h3>
-            <section className="grid justify-center-center lg:grid-cols-2 xl:grid-cols-3 gap-4">
+            <section className="grid justify-center lg:grid-cols-2 xl:grid-cols-3 gap-4">
                 {
                     apoyoPrice.map((price: ApoyoPrice) => {
                         return (

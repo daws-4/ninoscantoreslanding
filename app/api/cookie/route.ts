@@ -3,10 +3,10 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-     const jwtName = process.env.JWT_NAME;
-    if (!jwtName) {
-      throw new Error("JWT_NAME is not defined in environment variables");
-    }
+  const jwtName = process.env.JWT_NAME;
+  if (!jwtName) {
+    throw new Error("JWT_NAME is not defined in environment variables");
+  }
   const cookieStore = cookies();
   const token: any = (await cookieStore).get(jwtName as any);
 

@@ -1,10 +1,8 @@
-'use client'
-
-export default function Home(){
+export default function Login(){
 
     return(
-        <div>
+        <article className="container mx-auto px-4 lg:px-0">
             <h1>Login</h1>
-        </div>
+        </article>
     )
 }

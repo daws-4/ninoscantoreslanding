@@ -54,6 +54,23 @@ export const HeartIcon: React.FC<IconSvgProps> = ({
   );
 };
 
+export const CheckIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, ...props }) => {
+  return (
+    <svg
+      aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height={size || height}
+      role="presentation"
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+    >
+      <path fillRule="evenodd" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm-1.1 13.8 5.8-5.9a1 1 0 1 0-1.4-1.4L10.9 13l-2.2-2.1a1 1 0 1 0-1.4 1.4l3.6 3.6Z" />
+    </svg>
+  );
+};
+
 export const PauseCircleIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, ...props }) => {
   return (
     <svg

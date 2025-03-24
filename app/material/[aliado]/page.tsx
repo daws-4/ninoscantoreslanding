@@ -12,7 +12,7 @@ export default async function MaterialAccesed({
   const { name } = aliadoData as Aliado;
 
   return (
-    <article className="container mx-auto">
+    <article className="container mx-auto px-4 lg:px-0">
       <Titulo>{name}</Titulo>
       <h2 className="text-4xl text-yellow-800">Material didáctico</h2>
 
